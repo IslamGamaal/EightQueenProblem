@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane prefHeight="821.0" prefWidth="1045.0">
+         <children>
+            <Button layoutX="34.0" layoutY="14.0" mnemonicParsing="false" onAction="#importGrid" prefHeight="27.0" prefWidth="91.0" text="IMPORT" />
+            <Button fx:id="position00" layoutX="34.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4 #ebcea4#ebcea4;" />
+            <Button fx:id="position01" layoutX="125.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position02" layoutX="216.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position03" layoutX="307.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position04" layoutX="398.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position05" layoutX="489.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position06" layoutX="580.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position07" layoutX="671.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position10" layoutX="34.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position11" layoutX="125.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position12" layoutX="216.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position13" layoutX="307.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position14" layoutX="398.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position15" layoutX="489.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position16" layoutX="580.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position17" layoutX="671.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position20" layoutX="34.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position21" layoutX="125.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position22" layoutX="216.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position23" layoutX="307.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position24" layoutX="398.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position25" layoutX="489.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position26" layoutX="580.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position27" layoutX="671.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position30" layoutX="34.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position31" layoutX="125.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position32" layoutX="216.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position33" layoutX="307.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position34" layoutX="398.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position35" layoutX="489.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position36" layoutX="580.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position37" layoutX="671.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position40" layoutX="34.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position41" layoutX="125.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position42" layoutX="216.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position43" layoutX="307.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position44" layoutX="398.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position45" layoutX="489.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position46" layoutX="580.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position47" layoutX="671.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position50" layoutX="34.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position51" layoutX="125.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position52" layoutX="216.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position53" layoutX="307.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position54" layoutX="398.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position55" layoutX="489.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position56" layoutX="580.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position57" layoutX="671.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position60" layoutX="34.0" layoutY="604.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position61" layoutX="125.0" layoutY="604.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position62" layoutX="216.0" layoutY="604.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position63" layoutX="307.0" layoutY="604.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position64" layoutX="398.0" layoutY="604.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position65" layoutX="489.0" layoutY="604.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position66" layoutX="580.0" layoutY="604.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position67" layoutX="671.0" layoutY="604.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position70" layoutX="34.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position71" layoutX="125.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position72" layoutX="216.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position73" layoutX="307.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position74" layoutX="398.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position75" layoutX="489.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Button fx:id="position76" layoutX="580.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #bc8358#bc8358 #bc8358#bc8358;" />
+            <Button fx:id="position77" layoutX="671.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#putQueenOnPosition" onMouseEntered="#viewQueenOnPosition" onMouseExited="#removeQueenFromPosition" prefHeight="91.0" prefWidth="91.0" style="-fx-background-color: #ebcea4#ebcea4;" />
+            <Label layoutX="857.0" layoutY="428.0" prefHeight="44.0" prefWidth="104.0" text="Time">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <TextField fx:id="timeField" alignment="CENTER" editable="false" layoutX="829.0" layoutY="471.0" prefHeight="70.0" prefWidth="140.0" style="-fx-color: blue;" text="0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </TextField>
+            <Text layoutX="977.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sec" />
+            <Label layoutX="852.0" layoutY="576.0" prefHeight="44.0" prefWidth="104.0" text="Cost">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <TextField fx:id="costField" alignment="CENTER" editable="false" layoutX="824.0" layoutY="619.0" prefHeight="70.0" prefWidth="140.0" style="-fx-color: blue;" text="0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </TextField>
+            <Text layoutX="972.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moves" />
+            <ComboBox fx:id="algorithmsComboBox" layoutX="809.0" layoutY="169.0" prefHeight="35.0" prefWidth="203.0" promptText="Choose Algorithm" />
+            <Button layoutX="125.0" layoutY="14.0" mnemonicParsing="false" onAction="#clearBoard" prefHeight="27.0" prefWidth="91.0" text="Clear" />
+            <Button layoutX="671.0" layoutY="14.0" mnemonicParsing="false" onAction="#compareResult" prefHeight="27.0" prefWidth="91.0" text="Compare" />
+            <Button layoutX="809.0" layoutY="58.0" mnemonicParsing="false" onAction="#solve" prefHeight="91.0" prefWidth="203.0" style="-fx-background-color: green;" text="Start Algorithm" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
