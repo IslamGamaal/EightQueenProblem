@@ -2,6 +2,9 @@ package sample;
 
 import AlgorithmsImplementation.Genetic;
 import AlgorithmsImplementation.KBeamSearch;
+import AlgorithmsImplementation.hillclimbing.Board;
+import AlgorithmsImplementation.hillclimbing.HillClimbingRandomRestart;
+import AlgorithmsImplementation.hillclimbing.Queen;
 import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,8 +19,7 @@ import javafx.stage.FileChooser;
 import javafx.util.Pair;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
 
 public class Controller {
@@ -253,7 +255,17 @@ public class Controller {
     void solve(ActionEvent event) {
         int[] solution = new int[8];
         if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 0) {
-
+            HillClimbingRandomRestart hcrr = new HillClimbingRandomRestart();
+            try {
+                hcrr.solve(globalPath);
+                kField.setText("N/A");
+                timeField.setText(String.valueOf(hcrr.getTotalRuntime()));
+                costField.setText(String.valueOf(hcrr.getTotalCost()));
+                expNodes.setText(String.valueOf(hcrr.getNumOfExpandedNodes()));
+                solution = hcrr.getSolution();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 1) {
             KBeamSearch[] beamSearches = new KBeamSearch[6];
@@ -328,11 +340,13 @@ public class Controller {
         return positions;
     }
 
+    String globalPath;
     @FXML
     void importGrid(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File selectedfile = fileChooser.showOpenDialog(((Button)event.getSource()).getScene().getWindow());
+        globalPath = selectedfile.getPath();
         ArrayList<String> lines = new ArrayList<>();
         Scanner myReader = null;
         try {
@@ -410,4 +424,5 @@ public class Controller {
         };
         this.buttons = buttons;
     }
+
 }
