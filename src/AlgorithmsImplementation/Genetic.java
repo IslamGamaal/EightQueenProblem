@@ -12,7 +12,6 @@ public class Genetic {
         double startTime = System.currentTimeMillis();
         populationSize -= (populationSize % 2); // each one should get a mate.
         int[][] population = generatePopulation(n, populationSize);
-        population[0] = givenState;
         int maxFitness = getMaxFitness(n);
         for (int x = 0; x < numOfGenerations; x++) {
             population = getSelectedPopulation(population);
@@ -74,7 +73,7 @@ public class Genetic {
 
     private int[][] generatePopulation(int n, int populationSize) {
         int[][] population = new int[populationSize][];
-        for (int i = 1; i < populationSize; i++)
+        for (int i = 0; i < populationSize; i++)
             population[i] = generateChromosome(n);
         return population;
     }
