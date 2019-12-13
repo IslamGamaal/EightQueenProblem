@@ -24,8 +24,12 @@ public class Genetic {
                     return population[i];
                 }
                 population[i] = tryToMutate(population[i], mutationProbability);
-                if (getFitness(population[i]) == maxFitness)
+                if (getFitness(population[i]) == maxFitness) {
+                    double endTime = System.currentTimeMillis();
+                    totalRunTime = endTime - startTime;
+                    steps = x;
                     return population[i];
+                }
             }
         }
         return null;
