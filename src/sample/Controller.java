@@ -1,5 +1,6 @@
 package sample;
 
+import AlgorithmsImplementation.Genetic;
 import AlgorithmsImplementation.KBeamSearch;
 import javafx.collections.*;
 import javafx.event.ActionEvent;
@@ -172,6 +173,9 @@ public class Controller {
     private Button position60;
 
     @FXML
+    private TextField expNodes;
+
+    @FXML
     private Button position61;
 
     @FXML
@@ -220,10 +224,14 @@ public class Controller {
     private TextField timeField;
 
     @FXML
+    private TextField kField;
+
+    @FXML
     private TextField costField;
 
     @FXML
     private ComboBox<String> algorithmsComboBox;
+    private int bestK;
 
     @FXML
     void clearBoard(ActionEvent event) {
@@ -243,9 +251,41 @@ public class Controller {
 
     @FXML
     void solve(ActionEvent event) {
-        KBeamSearch kbs = new KBeamSearch();
-        //positions = makeFit(positions);
-        int[] solution = kbs.solve(8, positions, 5000, 1);
+        int[] solution = new int[8];
+        if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 0) {
+
+        }
+        else if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 1) {
+            KBeamSearch[] beamSearches = new KBeamSearch[6];
+            int[] kValues = {1, 4, 8, 12, 16, 20};
+            int kIndex = 0;
+            double max = Integer.MIN_VALUE;
+            int wantedIndex = 0;
+            for (int i = 0; i < beamSearches.length; i++) {
+                beamSearches[i] = new KBeamSearch();
+                beamSearches[i].solve(8, positions, 500, kValues[kIndex]);
+                if (beamSearches[i].getTotalRunTime() > max) {
+                    max = beamSearches[i].getTotalRunTime();
+                    wantedIndex = kIndex;
+                }
+                kIndex++;
+            }
+            solution = beamSearches[wantedIndex].getSolution();
+            bestK = kValues[wantedIndex];
+            kField.setText(String.valueOf(bestK));
+            timeField.setText(String.valueOf(beamSearches[wantedIndex].getTotalRunTime()));
+            costField.setText(String.valueOf(beamSearches[wantedIndex].getSteps()));
+            expNodes.setText(String.valueOf(beamSearches[wantedIndex].getNumOfExpandedNodes()));
+        }
+        else if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 2) {
+            Genetic genetic = new Genetic();
+            int wantedIndex = 0;
+            solution = genetic.solve(8, positions, 10, 0.5, 500);
+            kField.setText("N/A");
+            timeField.setText(String.valueOf(genetic.getTotalRunTime()));
+            costField.setText(String.valueOf(genetic.getSteps()));
+            expNodes.setText(String.valueOf(genetic.getNumOfExpandedNodes()));
+        }
         if(solution == null) return;
         clearBoard(null);
         String evenOrOdd;
