@@ -7,8 +7,9 @@ public class KBeamSearch {
     private int numOfExpandedNodes = 0;
     private double totalRunTime = -1;
     private int steps = -1;
+    private int[] solution;
 
-    public int[] solve(int n, int[] givenState, int maxNumOfIterations, int k) {
+    public void solve(int n, int[] givenState, int maxNumOfIterations, int k) {
         double startTime = System.currentTimeMillis();
         int[][] states = new int[k][];
         states[0] = givenState;
@@ -24,7 +25,8 @@ public class KBeamSearch {
                     double endTime = System.currentTimeMillis();
                     totalRunTime = endTime - startTime;
                     steps = x;
-                    return states[i];
+                    solution = states[i];
+                    return;
                 }
 
                 for (int col = 0; col < n; col++) {
@@ -38,7 +40,7 @@ public class KBeamSearch {
             Arrays.sort(newStates, Comparator.comparingInt(SolverUtils::getHeuristicCost));
             states = Arrays.copyOfRange(newStates, 0, k);
         }
-        return null;
+        solution = null;
     }
 
     private int[] makeMove(int r[], int col, int costToBeat) {
@@ -73,4 +75,7 @@ public class KBeamSearch {
         return steps;
     }
 
+    public int[] getSolution() {
+        return solution;
+    }
 }
