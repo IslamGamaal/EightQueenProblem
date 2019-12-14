@@ -116,7 +116,7 @@ public class HillClimbingRandomRestart {
         return this.numOfExpandedNodes;
     }
 
-    public void solve(String filePath) throws IOException {
+    public void solve(int[] positions) {
         int presentHeuristic;
         /*
         Queen[] presentBoard = generateBoard();
@@ -133,21 +133,8 @@ public class HillClimbingRandomRestart {
 
          */
         List<Queen> queens = new ArrayList<>();
-        File input = new File(filePath);
-        BufferedReader br = new BufferedReader(new FileReader(input));
-
-        String st;
-        int row = 0;
-        int col = 0;
-        while ((st = br.readLine()) != null) {
-            col = 0;
-            for (int i = 0; i < 8; i++) {
-                if(st.charAt(i) == 'Q'){
-                    queens.add(new Queen(row,col));
-                }
-                col++;
-            }
-            row++;
+        for (int i = 0; i < 8; i++) {
+                queens.add(new Queen(positions[i],i));
         }
         Board newBoard = new Board(queens);
         printState(newBoard.getBoardState());

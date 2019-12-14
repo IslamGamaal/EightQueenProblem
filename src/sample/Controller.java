@@ -2,6 +2,7 @@ package sample;
 
 import AlgorithmsImplementation.Genetic;
 import AlgorithmsImplementation.KBeamSearch;
+import AlgorithmsImplementation.csp.CSP;
 import AlgorithmsImplementation.hillclimbing.Board;
 import AlgorithmsImplementation.hillclimbing.HillClimbingRandomRestart;
 import AlgorithmsImplementation.hillclimbing.Queen;
@@ -237,6 +238,10 @@ public class Controller {
 
     @FXML
     void clearBoard(ActionEvent event) {
+        costField.setText("0");
+        timeField.setText("0");
+        kField.setText("N/A");
+        expNodes.setText("0");
         queensPositions = new HashSet<>();
         for(int i = 0; i < 8; i++)
             for (int j = 0; j < 8; j++)
@@ -253,19 +258,16 @@ public class Controller {
 
     @FXML
     void solve(ActionEvent event) {
+        clearBoard(null);
         int[] solution = new int[8];
         if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 0) {
             HillClimbingRandomRestart hcrr = new HillClimbingRandomRestart();
-            try {
-                hcrr.solve(globalPath);
-                kField.setText("N/A");
-                timeField.setText(String.valueOf(hcrr.getTotalRuntime()));
-                costField.setText(String.valueOf(hcrr.getTotalCost()));
-                expNodes.setText(String.valueOf(hcrr.getNumOfExpandedNodes()));
-                solution = hcrr.getSolution();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            hcrr.solve(positions);
+            kField.setText("N/A");
+            timeField.setText(String.valueOf(hcrr.getTotalRuntime()));
+            costField.setText(String.valueOf(hcrr.getTotalCost()));
+            expNodes.setText(String.valueOf(hcrr.getNumOfExpandedNodes()));
+            solution = hcrr.getSolution();
         }
         else if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 1) {
             KBeamSearch[] beamSearches = new KBeamSearch[6];
@@ -292,14 +294,23 @@ public class Controller {
         else if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 2) {
             Genetic genetic = new Genetic();
             int wantedIndex = 0;
-            solution = genetic.solve(8, positions, 10, 0.5, 500);
+            solution = genetic.solve(8, positions, 8, 0.7, 50000);
             kField.setText("N/A");
             timeField.setText(String.valueOf(genetic.getTotalRunTime()));
             costField.setText(String.valueOf(genetic.getSteps()));
             expNodes.setText(String.valueOf(genetic.getNumOfExpandedNodes()));
+        } else if(algorithmsComboBox.getSelectionModel().getSelectedIndex() == 3) {
+            CSP queen = new CSP();
+            boolean hasSolution = queen.solveNQ(positions);
+            if(hasSolution) {
+                solution = queen.getSolution();
+                timeField.setText(String.valueOf(queen.getTotalTime()));
+                costField.setText(String.valueOf(queen.getCost()));
+                expNodes.setText(String.valueOf(queen.getCost()));
+            }
         }
         if(solution == null) return;
-        clearBoard(null);
+        if(solution[0] == 0 && solution[1] == 0) return;
         String evenOrOdd;
         for(int i = 0; i < 8; i++) {
             if((solution[i]+i)%2 == 0)
@@ -340,13 +351,11 @@ public class Controller {
         return positions;
     }
 
-    String globalPath;
     @FXML
     void importGrid(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File selectedfile = fileChooser.showOpenDialog(((Button)event.getSource()).getScene().getWindow());
-        globalPath = selectedfile.getPath();
         ArrayList<String> lines = new ArrayList<>();
         Scanner myReader = null;
         try {
